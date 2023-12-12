@@ -3,20 +3,32 @@
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
-[DOWNLOAD TC LOTTERY HACK 2023](https://tclottery.bet/hack)
+**[DOWNLOAD TC LOTTERY HACK 2023](https://tclottery.bet/hack)**
 
 Join us on [Medium](https://magnusseo.medium.com)
 
-**TC LOTTERY HACK 2023** is performant WINGO AVIATOR cheat injector software that allows users to create and inject cheats in their smartphone color games apps. This includes memory scanning, accurate predicting, x86/x64 assembly injection, and so on.
+**TC LOTTERY HACK 2023** is performant WINGO AVIATOR cheat injector software that allows users to create and inject cheats in their smartphone color games apps, working on Android & iOS. This includes memory scanning, accurate predicting, x86/x64 assembly injection, and so on.
 
-Squalr achieves fast scans through multi-threading combined with SIMD instructions. See this article: [SIMD in .NET](https://instil.co/2016/03/21/parallelism-on-a-single-core-simd-with-c/). To take advantage of these gains, your CPU needs to have support for SSE, AVX, or AVX-512.
+TC Lottery Hack achieves fast scans through multi-threading combined with SIMD instructions. See this article: [SIMD in .NET](https://instil.co/2016/03/21/parallelism-on-a-single-core-simd-with-c/). To take advantage of these gains, your smartphone needs to have support for SSE, AVX, or AVX-512. TC Lottery is better than BigDaddy 91Club Daman ColorWiz MantriMall JoyMall Yoswin.
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<table class="table">
+  <thead>
+    <tr>
+<th scope="col"><img src="https://tclottery.bet/wp-content/uploads/2023/12/TCLottery-Hack.jpg" alt="TC-LOTTERY-HACK" width="auto" /></th>
+<th scope="col"><img src="https://tclottery.bet/wp-content/uploads/2023/12/TC-Lottery-Hack.jpg" alt="TC-LOTTERY-HACK" width="auto" /></th>
+    </tr>
+  </thead>
+</table>
 
 ![image](https://github.com/magnusseo/tc-lottery-hack/assets/153587061/c3132a25-77e7-45fd-96b9-b5e584652a50)
 
 ## Documentation
 
 You can find detailed documentation on the 
-. There are three ways to use Squalr:
+. There are three ways to use TC Lottery Hack:
 - Front end GUI
 - Scripting API
 - Back end NuGet packages
@@ -27,7 +39,7 @@ Below is some brief documentation on the NuGet package APIs
 If using the NuGet packages, it is important to hook into the engine's output to receive logs of events. These are invaluable for diagnosing issues.
 
 ```csharp
-using Squalr.Engine.Logging;
+using TC.Lottery.Engine.Logging;
 
 ...
 
@@ -48,7 +60,7 @@ class EngineLogEvents : ILoggerObserver
 
 ### Attaching The Engine
 ```csharp
-using Squalr.Engine.OS;
+using TC.Lottery.Engine.OS;
 ...
 
 IEnumerable<Process> processes = Processes.Default.GetProcesses();
@@ -64,7 +76,7 @@ Processes.Default.OpenedProcess = process;
 ### Manipulating Memory:
 
 ```csharp
-using Squalr.Engine.Memory;
+using TC.Lottery.Engine.Memory;
 
 ...
 
@@ -76,11 +88,11 @@ IEnumerable<NormalizedModule> modules = Query.GetModules();
 ```
 
 ### Assembling/Disassembling:
-Squalr can assemble and disassemble x86/x64 instructions, leveraging NASM.
+TC Lottery Hack can assemble and disassemble x86/x64 instructions, leveraging NASM.
 
 ```csharp
-using Squalr.Engine.Architecture;
-using Squalr.Engine.Architecture.Assemblers;
+using TC.Lottery.Engine.Architecture;
+using TC.Lottery.Engine.Architecture.Assemblers;
 
 ...
 
@@ -96,13 +108,13 @@ Console.WriteLine(instructions[0].Mnemonic);
 ```
 
 ### Scanning:
-Squalr has an API for performing high performance memory scanning:
+TC Lottery Hack has an API for performing high performance memory scanning:
 
 ```csharp
-using Squalr.Engine.Scanning;
-using Squalr.Engine.Scanning.Scanners;
-using Squalr.Engine.Scanning.Scanners.Constraints;
-using Squalr.Engine.Scanning.Snapshots;
+using TC.Lottery.Engine.Scanning;
+using TC.Lottery.Engine.Scanning.Scanners;
+using TC.Lottery.Engine.Scanning.Scanners.Constraints;
+using TC.Lottery.Engine.Scanning.Snapshots;
 
 ...
 
@@ -167,7 +179,7 @@ Reference | Description
 
 ## Build
 
-In order to compile Squalr, you should only need **Visual Studio 2017**. This should be up to date, we frequently update Squalr to use the latest version of the .NET framework. Here are the important 3rd party libraries that this project uses:
+In order to compile TC Lottery Hack, you should only need **Visual Studio 2017**. This should be up to date, we frequently update TC Lottery Hack to use the latest version of the .NET framework. Here are the important 3rd party libraries that this project uses:
 
 Library | Description 
 --- | ---
