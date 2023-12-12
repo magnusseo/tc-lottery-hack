@@ -1,0 +1,408 @@
+﻿<UserControl
+    x:Class="Squalr.View.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:Squalr.View.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="SqualrSettings"
+    d:DesignHeight="320"
+    d:DesignWidth="512"
+    x:ClassModifier="public"
+    DataContext="{Binding SettingsViewModel, Source={StaticResource ViewModelLocator}}"
+    mc:Ignorable="d">
+    <TabControl Background="{StaticResource SqualrColorPanel}" SelectedIndex="1">
+        <TabControl.Resources>
+            <Style TargetType="{x:Type TabItem}">
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="HeaderTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <Border Background="{StaticResource SqualrColorGray20}" BorderThickness="0">
+                                <ContentPresenter>
+                                    <ContentPresenter.Content>
+                                        <TextBlock
+                                            Margin="4,2,4,2"
+                                            Foreground="{StaticResource SqualrColorWhite}"
+                                            Text="{TemplateBinding Content}" />
+                                    </ContentPresenter.Content>
+                                </ContentPresenter>
+                            </Border>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </TabControl.Resources>
+        <TabItem Background="Transparent" Header="General">
+            <Grid>
+                <GroupBox
+                    Padding="4"
+                    BorderBrush="{StaticResource SqualrColorGray74}"
+                    BorderThickness="2"
+                    Foreground="{StaticResource SqualrColorWhite}"
+                    Header="Project Settings">
+                    <StackPanel>
+                        <WrapPanel>
+                            <CheckBox Padding="0,0,4,0" IsChecked="{Binding SettingsViewModel.AutomaticUpdates, Mode=TwoWay}" />
+                            <TextBlock VerticalAlignment="Center" Text="Automatic Updates" />
+                        </WrapPanel>
+                        <TextBlock Text="Project Root:" />
+                        <Grid Margin="0,4,0,0" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="256" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox
+                                Grid.Column="0"
+                                Background="{StaticResource SqualrColorPanel}"
+                                Foreground="{StaticResource SqualrColorWhite}"
+                                IsReadOnly="True"
+                                Text="{Binding ProjectRoot, Mode=OneWay}" />
+                            <Button
+                                Grid.Column="1"
+                                Width="32"
+                                Margin="4,0,0,0"
+                                Command="{Binding SolutionExplorerViewModel.SetProjectRootCommand, Source={StaticResource ViewModelLocator}}">
+                                ...
+                            </Button>
+                        </Grid>
+                    </StackPanel>
+                </GroupBox>
+            </Grid>
+        </TabItem>
+
+        <TabItem Background="Transparent" Header="Memory">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="192" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="2">
+                    <GroupBox
+                        Padding="4"
+                        BorderBrush="{StaticResource SqualrColorGray74}"
+                        BorderThickness="2"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Header="Required Protection Flags">
+                        <StackPanel>
+                            <WrapPanel>
+                                <CheckBox Padding="0,0,4,0" IsChecked="{Binding RequiredProtectionWrite, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Write" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <CheckBox Padding="0,0,4,0" IsChecked="{Binding RequiredProtectionExecute, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Execute" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <CheckBox Padding="0,0,4,0" IsChecked="{Binding RequiredProtectionCopyOnWrite, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Copy on Write" />
+                            </WrapPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="2">
+                    <GroupBox
+                        Padding="4"
+                        BorderBrush="{StaticResource SqualrColorGray74}"
+                        BorderThickness="2"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Header="Excluded Protection Flags">
+                        <StackPanel>
+                            <WrapPanel>
+                                <CheckBox Padding="0,0,4,0" IsChecked="{Binding ExcludedProtectionWrite, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Write" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <CheckBox Padding="0,0,4,0" IsChecked="{Binding ExcludedProtectionExecute, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Execute" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <CheckBox Padding="0,0,4,0" IsChecked="{Binding ExcludedProtectionCopyOnWrite, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Copy on Write" />
+                            </WrapPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="2">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <GroupBox
+                            Grid.Row="0"
+                            Padding="4"
+                            BorderBrush="{StaticResource SqualrColorGray74}"
+                            BorderThickness="2"
+                            Foreground="{StaticResource SqualrColorWhite}"
+                            Header="Memory Type">
+                            <StackPanel>
+                                <WrapPanel>
+                                    <CheckBox Padding="0,0,4,0" IsChecked="{Binding MemoryTypeNone, Mode=TwoWay}" />
+                                    <TextBlock VerticalAlignment="Center" Text="None" />
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <CheckBox Padding="0,0,4,0" IsChecked="{Binding MemoryTypePrivate, Mode=TwoWay}" />
+                                    <TextBlock VerticalAlignment="Center" Text="Image" />
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <CheckBox Padding="0,0,4,0" IsChecked="{Binding MemoryTypeMapped, Mode=TwoWay}" />
+                                    <TextBlock VerticalAlignment="Center" Text="Private" />
+                                </WrapPanel>
+                                <WrapPanel>
+                                    <CheckBox Padding="0,0,4,0" IsChecked="{Binding MemoryTypeImage, Mode=TwoWay}" />
+                                    <TextBlock VerticalAlignment="Center" Text="Mapped" />
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox
+                            Grid.Row="1"
+                            Padding="4"
+                            BorderBrush="{StaticResource SqualrColorGray74}"
+                            BorderThickness="2"
+                            Foreground="{StaticResource SqualrColorWhite}"
+                            Header="Advanced">
+                            <StackPanel>
+                                <WrapPanel>
+                                    <CheckBox Padding="0,0,4,0" IsChecked="{Binding UseMultiThreadScans, Mode=TwoWay}" />
+                                    <TextBlock VerticalAlignment="Center" Text="Multi-thread Scans" />
+                                </WrapPanel>
+                            </StackPanel>
+                        </GroupBox>
+                    </Grid>
+                </Grid>
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="2">
+                    <GroupBox
+                        Padding="4"
+                        BorderBrush="{StaticResource SqualrColorGray74}"
+                        BorderThickness="2"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Header="Scans">
+                        <StackPanel>
+                            <WrapPanel>
+                                <TextBlock
+                                    Padding="0,0,4,0"
+                                    Foreground="{StaticResource SqualrColorWhite}"
+                                    Text="Alignment:" />
+                            </WrapPanel>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <WrapPanel Grid.Row="0" Grid.Column="0">
+                                    <RadioButton IsChecked="{Binding IsAlignment1, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Padding="4,0,0,0"
+                                        Foreground="{StaticResource SqualrColorWhite}"
+                                        Text="1 Byte" />
+                                </WrapPanel>
+                                <WrapPanel
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="24,0,0,0">
+                                    <RadioButton IsChecked="{Binding IsAlignment2, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Padding="4,0,0,0"
+                                        Foreground="{StaticResource SqualrColorWhite}"
+                                        Text="2 Bytes" />
+                                </WrapPanel>
+                                <WrapPanel Grid.Row="1" Grid.Column="0">
+                                    <RadioButton IsChecked="{Binding IsAlignment4, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Padding="4,0,0,0"
+                                        Foreground="{StaticResource SqualrColorWhite}"
+                                        Text="4 Bytes" />
+                                </WrapPanel>
+                                <WrapPanel
+                                    Grid.Row="1"
+                                    Grid.Column="1"
+                                    Margin="24,0,0,0">
+                                    <RadioButton IsChecked="{Binding IsAlignment8, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Padding="4,0,0,0"
+                                        Foreground="{StaticResource SqualrColorWhite}"
+                                        Text="8 Bytes" />
+                                </WrapPanel>
+                                <WrapPanel
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Margin="24,0,0,0">
+                                    <RadioButton IsChecked="{Binding IsAlignmentAuto, Mode=TwoWay}" />
+                                    <TextBlock
+                                        Padding="4,0,0,0"
+                                        Foreground="{StaticResource SqualrColorWhite}"
+                                        Text="Auto" />
+                                </WrapPanel>
+                            </Grid>
+                            <WrapPanel>
+                                <TextBlock
+                                    Padding="0,8,4,0"
+                                    Foreground="{StaticResource SqualrColorWhite}"
+                                    Text="Scan Range:" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <RadioButton IsChecked="{Binding IsUserMode, Mode=TwoWay}" />
+                                <TextBlock
+                                    Padding="4,0,0,0"
+                                    Foreground="{StaticResource SqualrColorWhite}"
+                                    Text="Scan Usermode Memory" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <RadioButton IsChecked="{Binding IsNotUserMode, Mode=TwoWay}" />
+                                <TextBlock
+                                    Padding="4,0,0,0"
+                                    Foreground="{StaticResource SqualrColorWhite}"
+                                    Text="Scan Custom Range" />
+                            </WrapPanel>
+                            <Controls:HexDecBox
+                                x:Name="ScanRangeStartHexDecBox"
+                                Width="196"
+                                Margin="0,4,8,0"
+                                HorizontalAlignment="Left"
+                                BorderBrush="{StaticResource SqualrColorWhite}"
+                                BorderThickness="1"
+                                IsEnabled="{Binding SettingsViewModel.IsNotUserMode, Source={StaticResource ViewModelLocator}}" />
+                            <Controls:HexDecBox
+                                x:Name="ScanRangeEndHexDecBox"
+                                Width="196"
+                                Margin="0,4,8,0"
+                                HorizontalAlignment="Left"
+                                BorderBrush="{StaticResource SqualrColorWhite}"
+                                BorderThickness="1"
+                                IsEnabled="{Binding SettingsViewModel.IsNotUserMode, Source={StaticResource ViewModelLocator}}" />
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </TabItem>
+
+        <TabItem Background="Transparent" Header="Intervals">
+            <StackPanel Margin="4">
+                <WrapPanel Margin="0,4,0,4">
+                    <Controls:HexDecBox
+                        x:Name="FreezeIntervalHexDecBox"
+                        Width="64"
+                        Margin="0,4,8,0"
+                        HorizontalAlignment="Left"
+                        BorderBrush="{StaticResource SqualrColorWhite}"
+                        BorderThickness="1" />
+                    <TextBlock
+                        Padding="8,0,0,0"
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Text="Freeze Interval" />
+                </WrapPanel>
+                <WrapPanel Margin="0,4,0,4">
+                    <Controls:HexDecBox
+                        x:Name="RescanIntervalHexDecBox"
+                        Width="64"
+                        Margin="0,4,8,0"
+                        HorizontalAlignment="Left"
+                        BorderBrush="{StaticResource SqualrColorWhite}"
+                        BorderThickness="1" />
+                    <TextBlock
+                        Padding="8,0,0,0"
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Text="Rescan Interval" />
+                </WrapPanel>
+                <WrapPanel Margin="0,4,0,4">
+                    <Controls:HexDecBox
+                        x:Name="TableReadIntervalHexDecBox"
+                        Width="64"
+                        Margin="0,4,8,0"
+                        HorizontalAlignment="Left"
+                        BorderBrush="{StaticResource SqualrColorWhite}"
+                        BorderThickness="1" />
+                    <TextBlock
+                        Padding="8,0,0,0"
+                        VerticalAlignment="Center"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Text="Table Read Interval" />
+                </WrapPanel>
+                <WrapPanel Margin="0,4,0,4">
+                    <Controls:HexDecBox
+                        x:Name="ResultReadIntervalHexDecBox"
+                        Width="64"
+                        Margin="0,4,8,0"
+                        HorizontalAlignment="Left"
+                        BorderBrush="{StaticResource SqualrColorWhite}"
+                        BorderThickness="1" />
+                    <TextBlock
+                        Padding="8,0,0,0"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Text="Result Read Interval" />
+                </WrapPanel>
+            </StackPanel>
+        </TabItem>
+        <TabItem Background="Transparent" Header="Emulators">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="2">
+                    <GroupBox
+                        Padding="4"
+                        BorderBrush="{StaticResource SqualrColorGray74}"
+                        BorderThickness="2"
+                        Foreground="{StaticResource SqualrColorWhite}"
+                        Header="Target Emulator">
+                        <StackPanel>
+                            <WrapPanel>
+                                <RadioButton Padding="0,0,4,0" IsChecked="{Binding IsEmulatorTypeAuto, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Auto" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <RadioButton Padding="0,0,4,0" IsChecked="{Binding IsEmulatorTypeNone, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="None" />
+                            </WrapPanel>
+                            <WrapPanel>
+                                <RadioButton Padding="0,0,4,0" IsChecked="{Binding IsEmulatorTypeDolphin, Mode=TwoWay}" />
+                                <TextBlock VerticalAlignment="Center" Text="Dolphin" />
+                            </WrapPanel>
+                        </StackPanel>
+                    </GroupBox>
+                </Grid>
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="2" />
+                <Grid
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="2" />
+            </Grid>
+        </TabItem>
+    </TabControl>
+</UserControl>
