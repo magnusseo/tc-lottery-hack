@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Version>3.0.2</Version>
+    <AssemblyVersion>3.0.2</AssemblyVersion>
+    <FileVersion>3.0.2</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Templates\**" />
+    <EmbeddedResource Remove="Templates\**" />
+    <None Remove="Templates\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Squalr.Engine.Architecture\Squalr.Engine.Architecture.csproj" />
+    <ProjectReference Include="..\Squalr.Engine.Memory\Squalr.Engine.Memory.csproj" />
+    <ProjectReference Include="..\Squalr.Engine.Scanning\Squalr.Engine.Scanning.csproj" />
+    <ProjectReference Include="..\Squalr.Engine.Scripting\Squalr.Engine.Scripting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <Generator>SettingsSingleFileGenerator</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CS-Script.Core" Version="2.0.0" />
+    <PackageReference Include="StyleCop.MSBuild" Version="6.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
