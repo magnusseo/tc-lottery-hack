@@ -1,29 +1,22 @@
-<h2 align="center">
-    <a href="https://www.npmjs.com/package/dummy-code">
-        <img src="https://tclottery.bet/wp-content/uploads/2023/12/tclottery-icon.png" alt="Dummy Code" width="100" />
-    </a>
-    <br>
-    TC Lottery
-    <br>
-</h2>
-
 # TC LOTTERY HACK 2023
+**LATEST VERSION V2.16.8 BY MAGNUS**
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
 
-[Squalr Official Website](https://www.squalr.com)
+[DOWNLOAD TC LOTTERY HACK 2023](https://tclottery.bet/hack)
 
-Join us on our [Discord Channel](https://discord.gg/Pq2msTx)
+Join us on [Medium](https://magnusseo.medium.com)
 
-**Squalr** is performant Memory Editing software that allows users to create and share cheats in their smartphone color games apps. This includes memory scanning, pointers, x86/x64 assembly injection, and so on.
+**TC LOTTERY HACK 2023** is performant WINGO AVIATOR cheat injector software that allows users to create and inject cheats in their smartphone color games apps. This includes memory scanning, accurate predicting, x86/x64 assembly injection, and so on.
 
 Squalr achieves fast scans through multi-threading combined with SIMD instructions. See this article: [SIMD in .NET](https://instil.co/2016/03/21/parallelism-on-a-single-core-simd-with-c/). To take advantage of these gains, your CPU needs to have support for SSE, AVX, or AVX-512.
 
-![SqualrGUI](Documentation/Squalr.png)
+![image](https://github.com/magnusseo/tc-lottery-hack/assets/153587061/c3132a25-77e7-45fd-96b9-b5e584652a50)
 
 ## Documentation
 
-You can find detailed documentation on the [Wiki](https://squalr.github.io/SqualrDocs/). There are three ways to use Squalr:
+You can find detailed documentation on the 
+. There are three ways to use Squalr:
 - Front end GUI
 - Scripting API
 - Back end NuGet packages
