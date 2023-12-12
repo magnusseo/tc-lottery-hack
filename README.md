@@ -1,3 +1,9 @@
+<h2 align="left">
+    <a href="https://tclottery.bet">
+        <img src="https://tclottery.bet/wp-content/uploads/2023/12/tclottery-icon.png" alt="tc-lottery-hack" width="100" />
+    </a>
+</h2>
+
 # TC LOTTERY HACK 2023
 **LATEST VERSION V2.16.8 BY MAGNUS**
 
