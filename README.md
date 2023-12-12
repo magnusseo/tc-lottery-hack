@@ -7,20 +7,6 @@
     <br>
 </h2>
 
-<h4 align="center"><a href="#contributing">tclottery.bet</a></h4>
-
-<p align="center">
-  <img src="https://img.shields.io/bundlephobia/min/dummy-code?label=Package" alt="npm package size">
-  <img src="https://img.shields.io/npm/dm/dummy-code?label=Downloads" alt="npm package downloads">
-  <img src="https://img.shields.io/npm/v/dummy-code" alt="npm package version">
-</p>
-
-<p align="center">
-  <a href="#how-to-use">How To Use</a> •
-  <a href="#dummy-functions">Functions</a> •
-  <a href="#contributing">Contributing</a>
-</p>
-
 # TC LOTTERY HACK 2023
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
